@@ -1,0 +1,167 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Two Sum</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please upgrade your browser to improve your experience and security.</p>
+    <![endif]-->
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-2">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="images/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-7">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a class="active" href="index.html">home</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="leetcode.html">LeetCode</a></li>
+                                        <li><a href="certificates.html">Certification</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="contactme">
+                                <div class="book_btn d-none d-lg-block">
+                                    <a href="https://www.linkedin.com/in/chockalingam-karuppanchetty/">Contact Chocks</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>Two Sum</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /bradcam_area  -->
+    <!-- solution_area  -->
+
+    <div class="solution-bloc">
+        <div class="solution-block">
+            <h2>Description</h2>
+            <p class = "solution-bloc">
+                Given an array of integers, return indices of the two numbers such that they add up to a specific target. <br><br>
+                You may assume that each input would have exactly one solution, and you may not use the same element twice.<br>
+            </p>
+        </div>
+
+        <div class="block">
+            <p class="block">
+                <h3>Example:</h3>
+                Given nums = [2, 7, 11, 15], target = 9, <br><br>
+
+                Because nums[0] + nums[1] = 2 + 7 = 9,<br>
+                return [0, 1].<br>
+        </div>
+
+        <div class="solution-block">
+            <h2>Algorithm</h2>
+            <div class="algorithm-block">
+                  1. Iterate through the elements in the list <br>
+                2. Find the difference between the target and element <br>
+                3. If that element is present in dictionary then we have obtained the solution so return the element and diff value <br>
+                4. else insert that element into the dictionary <br>
+            </div>
+        </div>
+    </div>
+
+    <div class="solution-block">
+    <h2>Python Solution:</h2>
+    <div style="background: #ffffff; overflow:auto;width:auto;    border-radius: 25px;     background-color: #eee;     border: 1px solid #999;     display: block;     padding: 20px 40px;     max-width:1200px;     margin: auto;     font-family: Menlo, Monaco, Consolas, monospace;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span>(<span style="color: #007020">object</span>):
+   <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">twoSum</span>(<span style="color: #007020">self</span>, nums, target):
+      <span style="color: #DD4422">&quot;&quot;&quot;</span>
+<span style="color: #DD4422">      :type nums: List[int]</span>
+<span style="color: #DD4422">      :type target: int</span>
+<span style="color: #DD4422">      :rtype: List[int]</span>
+<span style="color: #DD4422">      &quot;&quot;&quot;</span>
+      required <span style="color: #333333">=</span> {}
+      <span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #007020">len</span>(nums)):
+         <span style="color: #008800; font-weight: bold">if</span> target <span style="color: #333333">-</span> nums[i] <span style="color: #000000; font-weight: bold">in</span> required:
+            <span style="color: #008800; font-weight: bold">return</span> [required[target <span style="color: #333333">-</span> nums[i]],i]
+         <span style="color: #008800; font-weight: bold">else</span>:
+            required[nums[i]]<span style="color: #333333">=</span>i
+    </pre></td></tr></table></div></div>
+
+<!-- footer start -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-md-6">
+                        <div class="menu_links">
+                            <ul>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Portfolio</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-6">
+                        <div class="socail_links">
+                            <ul>
+                                <li><a href="https://github.com/chockskr"> <i class="fa fa-github"></i> </a></li>
+                                <li><a href="https://www.linkedin.com/in/chockalingam-karuppanchetty/"> <i class="fa fa-linkedin"></i> </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/ footer end  -->
+
+</html>
