@@ -1074,7 +1074,7 @@ h3 {
 }
 
 .algorithm-block {
-    border-radius: 25px;
+    border-radius: 5px;
     padding: 20px;
     background-color: #eee;
     -webkit-transition: .3s all ease;

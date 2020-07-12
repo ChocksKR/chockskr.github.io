@@ -7,6 +7,7 @@
     <title>Two Sum</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <!-- Place favicon.ico in the root directory -->
@@ -105,36 +106,41 @@
                 4. else insert that element into the dictionary <br>
             </div>
         </div>
-    </div>
 
-    <div class="solution-block">
-    <h2>Python Solution:</h2>
-    <div style="background: #ffffff; overflow:auto;width:auto;    border-radius: 25px;     background-color: #eee;     border: 1px solid #999;     display: block;     padding: 20px 40px;     max-width:1200px;     margin: auto;     font-family: Menlo, Monaco, Consolas, monospace;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Solution</span>(<span style="color: #007020">object</span>):
-   <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">twoSum</span>(<span style="color: #007020">self</span>, nums, target):
-      <span style="color: #DD4422">&quot;&quot;&quot;</span>
-<span style="color: #DD4422">      :type nums: List[int]</span>
-<span style="color: #DD4422">      :type target: int</span>
-<span style="color: #DD4422">      :rtype: List[int]</span>
-<span style="color: #DD4422">      &quot;&quot;&quot;</span>
-      required <span style="color: #333333">=</span> {}
-      <span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #007020">len</span>(nums)):
-         <span style="color: #008800; font-weight: bold">if</span> target <span style="color: #333333">-</span> nums[i] <span style="color: #000000; font-weight: bold">in</span> required:
-            <span style="color: #008800; font-weight: bold">return</span> [required[target <span style="color: #333333">-</span> nums[i]],i]
-         <span style="color: #008800; font-weight: bold">else</span>:
-            required[nums[i]]<span style="color: #333333">=</span>i
-    </pre></td></tr></table></div></div>
+        <div class="solution-block">
+            <h2>Brute Force Solution</h2>
+            <p>The first way you could go about solving this challenge is likely the way that most people come up with when they first see the problem. <br><br>
+                The issue is that you have a worst case run time of O(n²). If the two numbers you are searching for are at the end of the list, you would need to go through all of the numbers multiple times, once in the “X” loop and each respective time in the “Y” loop.<br>
+                This would give you the correct answer but the runtime is slow, and in the case of a large number of numbers it could be very problematic.<br></p>
+        </div>
+
+
+
+        <div class="solution-block">
+            <h2>Python Implementation:</h2>
+            <p><div class="w3-code cssHigh notranslate">
+                <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">twoSum</span>(<span style="color: #007020">self</span>, nums: List[<span style="color: #007020">int</span>], target: <span style="color: #007020">int</span>) <span style="color: #333333">-&gt;</span> List[<span style="color: #007020">int</span>]:
+                dictionary <span style="color: #333333">=</span> {}
+                answer <span style="color: #333333">=</span> []
+
+                <span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #007020">len</span>(nums)):
+                    secondNumber <span style="color: #333333">=</span> target<span style="color: #333333">-</span>nums[i]
+                    <span style="color: #008800; font-weight: bold">if</span>(secondNumber <span style="color: #000000; font-weight: bold">in</span> dictionary<span style="color: #333333">.</span>keys()):
+                        secondIndex <span style="color: #333333">=</span> nums<span style="color: #333333">.</span>index(secondNumber)
+                        <span style="color: #008800; font-weight: bold">if</span>(i <span style="color: #333333">!=</span> secondIndex):
+                            <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">sorted</span>([i, secondIndex])
+
+                    dictionary<span style="color: #333333">.</span>update({nums[i]: i})
+                </pre>
+            </div>
+        </div>
+
+        <div class="solution-block">
+            <iframe width="1000" height="500" frameborder="0" allowfullscreen
+                    src="https://www.youtube.com/embed/wUuxydLJOrA">
+            </iframe>
+        </div>
+    </div>
 
 <!-- footer start -->
     <footer class="footer">
